@@ -35,6 +35,7 @@ import android.os.Bundle;
 import android.os.RecoverySystem;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.Settings;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
@@ -128,6 +129,9 @@ public class ResetNetworkConfirm extends InstrumentedFragment {
                     btAdapter.factoryReset();
                 }
             }
+
+            Settings.Global.putInt(mContext.getContentResolver(),
+                    Settings.Global.CAPTIVE_PORTAL_MODE, 1);
 
             restoreDefaultApn(mContext);
             return isResetSucceed;
