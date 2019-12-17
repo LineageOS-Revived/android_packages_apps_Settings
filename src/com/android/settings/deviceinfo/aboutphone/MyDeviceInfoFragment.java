@@ -79,7 +79,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
     @Override
     public void onResume() {
         super.onResume();
-        initHeader();
     }
 
     @Override
