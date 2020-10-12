@@ -57,8 +57,8 @@ public class AppLockPreference extends CheckBoxPreference {
             public void onClick(View v) {
                 boolean hide = mAppLockManager.getAppNotificationHide(mPackageName);
                 mAppLockManager.setAppNotificationHide(mPackageName, !hide);
-                mNotificationImage.setImageResource(hide ? R.drawable.ic_audio_notifications
-                        : R.drawable.ic_audio_notifications_off_24dp);
+                mNotificationImage.setImageResource(hide ? R.drawable.ic_notifications
+                        : R.drawable.ic_notifications_off_24dp);
                 String toolTip = getContext().getString(hide ? R.string.applock_show_notif
                         : R.string.applock_hide_notif);
                 v.setTooltipText(toolTip);
@@ -69,8 +69,8 @@ public class AppLockPreference extends CheckBoxPreference {
         String toolTip = getContext().getString(hiding ? R.string.applock_hide_notif
                 : R.string.applock_show_notif);
         mNotifFrame.setTooltipText(toolTip);
-        mNotificationImage.setImageResource(hiding ? R.drawable.ic_audio_notifications_off_24dp
-                : R.drawable.ic_audio_notifications);
+        mNotificationImage.setImageResource(hiding ? R.drawable.ic_notifications_off_24dp
+                : R.drawable.ic_notifications);
         mNotifFrame.setVisibility(isChecked() ? View.VISIBLE : View.GONE);
     }
 
