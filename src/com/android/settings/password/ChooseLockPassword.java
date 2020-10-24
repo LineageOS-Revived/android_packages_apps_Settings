@@ -830,6 +830,7 @@ public class ChooseLockPassword extends SettingsActivity {
             } else if (mUiStage == Stage.NeedToConfirm) {
                 if (Arrays.equals(mFirstPin, mChosenPassword)) {
                     startSaveAndFinish();
+                    Utils.savePINPasswordLength(mLockPatternUtils, mChosenPassword.length, mUserId);
                 } else {
                     CharSequence tmp = mPasswordEntry.getText();
                     if (tmp != null) {
