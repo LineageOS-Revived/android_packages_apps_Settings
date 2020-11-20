@@ -62,4 +62,19 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
+    <!-- Captive Portal URLs -->
+    <string-array name="captive_portal_url_entries" translatable="false">
+        <item>GrapheneOS (default)</item>
+        <item>openSUSE</item>
+        <item>Ubuntu</item>
+        <item>Google</item>
+    </string-array>
+
+    <string-array name="captive_portal_url_values" translatable="false">
+        <item>GrapheneOS</item>
+        <item>openSUSE</item>
+        <item>Ubuntu</item>
+        <item>Google</item>
+    </string-array>
 </resources>

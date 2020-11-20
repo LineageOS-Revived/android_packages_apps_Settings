@@ -201,4 +201,8 @@
     <string name="captive_portal_switch_title">Captive portal mode</string>
     <string name="captive_portal_switch_summary">Enable or disable the captive portal probing for connection attempts (default ON).</string>
     <string name="captive_portal_switch_warning">If you switch off the captive portal, you will not receive connectivity informations any longer. Really switch off?</string>
+
+    <!-- Captive Portal URLs -->
+    <string name="captive_portal_url_title">Captive Portal Detection Provider</string>
+    <string name="captive_portal_url_summary">%s is contacted to probe, whether a captive portal is used</string>
 </resources>

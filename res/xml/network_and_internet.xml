@@ -134,4 +134,14 @@
         android:summary="@string/captive_portal_switch_summary"
         android:order="30" />
 
+    <ListPreference
+        android:key="captive_portal_url"
+        android:dependency="captive_portal_switch"
+        android:defaultValue="GrapheneOS"
+        android:entries="@array/captive_portal_url_entries"
+        android:entryValues="@array/captive_portal_url_values"
+        android:summary="@string/captive_portal_url_summary"
+        android:title="@string/captive_portal_url_title"
+        android:order="32" />
+
 </PreferenceScreen>

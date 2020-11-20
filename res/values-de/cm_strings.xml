@@ -101,4 +101,6 @@
     <string name="captive_portal_switch_title">Captive Portal Erkennung</string>
     <string name="captive_portal_switch_summary">Ein-/Ausschalten der Captive Portal Erkennung (Vorgabe EIN).</string>
     <string name="captive_portal_switch_warning">Nach dem Ausschalten der Captive-Portal-Erkennung empfangen Sie keine Verbindungs-Rückmeldung mehr. Wirklich fortfahren?</string>
+    <string name="captive_portal_url_title">Provider für Captive Portal Erkennung</string>
+    <string name="captive_portal_url_summary">%s wird kontaktiert, um das Vorhandensein eines \'Captive Portal\' zu prüfen</string>
 </resources>
