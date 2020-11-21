@@ -205,4 +205,5 @@
     <!-- Captive Portal URLs -->
     <string name="captive_portal_url_title">Captive Portal Detection Provider</string>
     <string name="captive_portal_url_summary">%s is contacted to probe, whether a captive portal is used</string>
+    <string name="captive_portal_toast_success">Captive portal provider has been changed</string>
 </resources>
