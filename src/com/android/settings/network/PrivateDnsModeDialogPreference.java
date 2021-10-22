@@ -17,6 +17,19 @@ package com.android.settings.network;
 
 import static android.net.ConnectivityManager.PRIVATE_DNS_DEFAULT_MODE_FALLBACK;
 import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_OFF;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_ADGUARD;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_APPLIEDPRIVACY;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CIRA;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CLEANBROWSING;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CLOUDFLARE;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CZNIC;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_GOOGLE;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_MULLVAD;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_QUADNINE;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_RESTENA;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_SWITCH;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_TWNIC;
+import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_UNCENSOREDDNS;
 import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_OPPORTUNISTIC;
 import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME;
 
@@ -73,6 +86,19 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
     static {
         PRIVATE_DNS_MAP = new HashMap<>();
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_OFF, R.id.private_dns_mode_off);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_ADGUARD, R.id.private_dns_mode_adguard);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_APPLIEDPRIVACY, R.id.private_dns_mode_appliedprivacy);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_CIRA, R.id.private_dns_mode_cira);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_CLEANBROWSING, R.id.private_dns_mode_cleanbrowsing);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_CLOUDFLARE, R.id.private_dns_mode_cloudflare);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_CZNIC, R.id.private_dns_mode_cznic);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_GOOGLE, R.id.private_dns_mode_google);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_MULLVAD, R.id.private_dns_mode_mullvad);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_QUADNINE, R.id.private_dns_mode_quadnine);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_RESTENA, R.id.private_dns_mode_restena);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_SWITCH, R.id.private_dns_mode_switch);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_TWNIC, R.id.private_dns_mode_twnic);
+        PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_UNCENSOREDDNS, R.id.private_dns_mode_uncensoreddns);
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_OPPORTUNISTIC, R.id.private_dns_mode_opportunistic);
         PRIVATE_DNS_MAP.put(PRIVATE_DNS_MODE_PROVIDER_HOSTNAME, R.id.private_dns_mode_provider);
     }
@@ -210,6 +236,45 @@ public class PrivateDnsModeDialogPreference extends CustomDialogPreferenceCompat
         switch (checkedId) {
             case R.id.private_dns_mode_off:
                 mMode = PRIVATE_DNS_MODE_OFF;
+                break;
+            case R.id.private_dns_mode_adguard:
+                mMode = PRIVATE_DNS_MODE_ADGUARD;
+                break;
+            case R.id.private_dns_mode_appliedprivacy:
+                mMode = PRIVATE_DNS_MODE_APPLIEDPRIVACY;
+                break;
+            case R.id.private_dns_mode_cira:
+                mMode = PRIVATE_DNS_MODE_CIRA;
+                break;
+            case R.id.private_dns_mode_cleanbrowsing:
+                mMode = PRIVATE_DNS_MODE_CLEANBROWSING;
+                break;
+            case R.id.private_dns_mode_cloudflare:
+                mMode = PRIVATE_DNS_MODE_CLOUDFLARE;
+                break;
+            case R.id.private_dns_mode_cznic:
+                mMode = PRIVATE_DNS_MODE_CZNIC;
+                break;
+            case R.id.private_dns_mode_google:
+                mMode = PRIVATE_DNS_MODE_GOOGLE;
+                break;
+            case R.id.private_dns_mode_mullvad:
+                mMode = PRIVATE_DNS_MODE_MULLVAD;
+                break;
+            case R.id.private_dns_mode_quadnine:
+                mMode = PRIVATE_DNS_MODE_QUADNINE;
+                break;
+            case R.id.private_dns_mode_restena:
+                mMode = PRIVATE_DNS_MODE_RESTENA;
+                break;
+            case R.id.private_dns_mode_switch:
+                mMode = PRIVATE_DNS_MODE_SWITCH;
+                break;
+            case R.id.private_dns_mode_twnic:
+                mMode = PRIVATE_DNS_MODE_TWNIC;
+                break;
+            case R.id.private_dns_mode_uncensoreddns:
+                mMode = PRIVATE_DNS_MODE_UNCENSOREDDNS;
                 break;
             case R.id.private_dns_mode_opportunistic:
                 mMode = PRIVATE_DNS_MODE_OPPORTUNISTIC;

@@ -39,6 +39,110 @@
                 android:minHeight="48dp"/>
 
             <RadioButton
+                android:id="@+id/private_dns_mode_adguard"
+                android:text="@string/private_dns_mode_adguard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_appliedprivacy"
+                android:text="@string/private_dns_mode_appliedprivacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_cira"
+                android:text="@string/private_dns_mode_cira"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_cleanbrowsing"
+                android:text="@string/private_dns_mode_cleanbrowsing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_cloudflare"
+                android:text="@string/private_dns_mode_cloudflare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_cznic"
+                android:text="@string/private_dns_mode_cznic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_google"
+                android:text="@string/private_dns_mode_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_mullvad"
+                android:text="@string/private_dns_mode_mullvad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_quadnine"
+                android:text="@string/private_dns_mode_quadnine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_restena"
+                android:text="@string/private_dns_mode_restena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_switch"
+                android:text="@string/private_dns_mode_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_twnic"
+                android:text="@string/private_dns_mode_twnic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
+                android:id="@+id/private_dns_mode_uncensoreddns"
+                android:text="@string/private_dns_mode_uncensoreddns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"/>
+
+            <RadioButton
                 android:id="@+id/private_dns_mode_opportunistic"
                 android:text="@string/private_dns_mode_opportunistic"
                 android:layout_width="wrap_content"
