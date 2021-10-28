@@ -17,6 +17,7 @@
 package com.android.settings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -69,6 +70,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
     private static final String KEY_SECURITY_PATCH = "security_patch";
+    private static final String KEY_CUSTOM_PATCH = "custom_patch";
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
@@ -123,6 +125,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             setStringSummary(KEY_SECURITY_PATCH, patch);
         } else {
             getPreferenceScreen().removePreference(findPreference(KEY_SECURITY_PATCH));
+        }
+
+        final String customPatch = DeviceInfoUtils.getCustomPatch();
+        if (!TextUtils.isEmpty(customPatch)) {
+            setStringSummary(KEY_CUSTOM_PATCH, customPatch);
+            findPreference(KEY_CUSTOM_PATCH).setEnabled(true);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_CUSTOM_PATCH));
         }
 
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
@@ -331,6 +341,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                         + "queryIntentActivities() returns empty" );
                 return true;
             }
+        } else if (preference.getKey().equals(KEY_CUSTOM_PATCH)) {
+            new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.custom_patch)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setMessage(R.string.custom_patch_info)
+                .setNegativeButton(R.string.cancel, null)
+                .create().show();
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
         } else if(preference.getKey().equals(KEY_SYSTEM_UPDATE_SETTINGS)) {

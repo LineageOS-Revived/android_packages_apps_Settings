@@ -359,4 +359,6 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
     <string name="shortcut_carrier_title">Opérateurs réseau</string>
     <string name="burnin_protection_title">Protection contre le brûlage de l\'écran</string>
     <string name="burnin_protection_summary">Déplacer périodiquement les éléments affichés en permanence à l\'écran pour éviter l\'usure de celui-ci</string>
+    <string name="custom_patch">Version individuelle</string>
+    <string name="custom_patch_info">Il n\'y a pas de mises à jour de sécurité officielles disponibles pour cette version d\'Android. \nTous les correctifs contenus ont été répliqués à partir de versions plus récentes.</string>
 </resources>

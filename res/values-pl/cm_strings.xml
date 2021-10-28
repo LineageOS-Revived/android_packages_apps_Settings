@@ -355,4 +355,6 @@
     <string name="shortcut_carrier_title">Operatorzy sieci</string>
     <string name="burnin_protection_title">Zabezpieczenie przed wypaleniem ekranu</string>
     <string name="burnin_protection_summary">Co jakiś czas przemieszcza trwale wyświetlane elementy, aby uniknąć wypalenia ekranu w danym obszarze</string>
+    <string name="custom_patch">Wersja nieoficjalna</string>
+    <string name="custom_patch_info">Nie ma oficjalnych aktualizacji zabezpieczeń dla tej wersji Androida. \nWszystkie zawarte łaty zostały przeniesione z nowszych wersji.</string>
 </resources>

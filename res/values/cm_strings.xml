@@ -526,4 +526,8 @@
     <string name="captive_portal_switch_title">Disable Captive Portal</string>
     <string name="captive_portal_switch_warning">Captive portal allows you to get information regarding the connection status. Are you sure you want to disable it?</string>
     <string name="captive_portal_warning_positive">Disable</string>
+
+    <!-- "Custom" Security Patch label -->
+    <string name="custom_patch">Custom build release</string>
+    <string name="custom_patch_info">There are no official security patches for this Android version anymore. \nAll patches contained in this build are backports from newer versions.</string>
 </resources>
