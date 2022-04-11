@@ -25,12 +25,8 @@
         android:title="@string/summary_placeholder"
         settings:animation="@raw/notification_interruption_model"
         settings:controller="com.android.settings.widget.VideoPreferenceController"
-        android:persistent="false" />
-
-    <!-- Empty category to draw divider -->
-    <PreferenceCategory
-        android:key="all_notifications_divider"
-        android:order="2"/>
+        android:persistent="false" 
+        settings:allowDividerBelow="false"/>
 
     <PreferenceCategory
         android:key="recent_notifications_category"
