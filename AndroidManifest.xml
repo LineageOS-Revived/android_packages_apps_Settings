@@ -2938,6 +2938,7 @@
 
         <activity android:name=".backup.UserBackupSettingsActivity"
                   android:label="@string/privacy_settings_title"
+                  android:parentActivityName="Settings$SystemDashboardActivity"
                   android:icon="@drawable/ic_settings_backup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -3309,6 +3310,7 @@
         <activity android:name=".backup.transport.TransportActivity"
                   android:label="@string/backup_transport_title"
                   android:icon="@drawable/ic_settings_backup"
+                  android:parentActivityName="Backup$UserBackupSettingsActivity"
                   android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
