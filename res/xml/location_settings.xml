@@ -77,6 +77,12 @@
             settings:forWork="true"
             settings:controller="com.android.settings.location.LocationServiceForWorkPreferenceController"/>
 
+        <com.android.settingslib.RestrictedSwitchPreference
+            android:key="force_disable_supl"
+            android:title="@string/force_disable_supl_title"
+            android:summary="@string/force_disable_supl_summary"
+            settings:controller="com.android.settings.location.ForceDisableSuplPrefController"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
