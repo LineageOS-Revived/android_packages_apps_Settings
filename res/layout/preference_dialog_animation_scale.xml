@@ -43,6 +43,6 @@
                 settings:minI="0"
                 settings:maxI="1.5"
                 settings:defaultValue="1.0"
-                settings:digits="2" />
+                settings:digits="1" />
 
 </RelativeLayout>
