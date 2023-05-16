@@ -17,19 +17,6 @@
 package com.android.settings.network;
 
 import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_OFF;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_ADGUARD;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_APPLIEDPRIVACY;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CIRA;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CLEANBROWSING;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CLOUDFLARE;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_CZNIC;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_GOOGLE;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_MULLVAD;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_QUADNINE;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_RESTENA;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_SWITCH;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_TWNIC;
-import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_UNCENSOREDDNS;
 import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_OPPORTUNISTIC;
 import static android.net.ConnectivityManager.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME;
 import static android.provider.Settings.Global.PRIVATE_DNS_DEFAULT_MODE;
@@ -141,58 +128,6 @@ public class PrivateDnsPreferenceController extends BasePreferenceController
         switch (mode) {
             case PRIVATE_DNS_MODE_OFF:
                 return res.getString(R.string.private_dns_mode_off);
-            case PRIVATE_DNS_MODE_ADGUARD:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_adguard)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_APPLIEDPRIVACY:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_appliedprivacy)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_CIRA:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_cira)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_CLEANBROWSING:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_cleanbrowsing)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_CLOUDFLARE:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_cloudflare)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_CZNIC:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_cznic)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_GOOGLE:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_google)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_MULLVAD:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_mullvad)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_QUADNINE:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_quadnine)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_RESTENA:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_restena)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_SWITCH:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_switch)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_TWNIC:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_twnic)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
-            case PRIVATE_DNS_MODE_UNCENSOREDDNS:
-                return dnsesResolved
-                        ? res.getString(R.string.private_dns_mode_uncensoreddns)
-                        : res.getString(R.string.private_dns_mode_provider_failure);
             case PRIVATE_DNS_MODE_OPPORTUNISTIC:
                 // TODO (b/79122154) : create a string specifically for this, instead of
                 // hijacking a string from notifications. This is necessary at this time
