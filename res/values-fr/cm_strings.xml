@@ -99,4 +99,6 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
     <string name="advanced_notifications_title">Paramètres de notification avancés</string>
     <string name="peak_refresh_rate_summary_custom">Augmente automatiquement le taux de rafraîchissement de 60 à %1$d Hz pour certains contenus. Accroît l\'utilisation de la batterie.</string>
     <string name="storage_warning_internal">Attention : Cette option peut ne pas fonctionner correctement ou entraîner une perte de données et n\'est donc pas recommandée !</string>
+    <string name="custom_patch">Version individuelle</string>
+    <string name="custom_patch_info">Il n\'y a pas de mises à jour de sécurité officielles disponibles pour cette version d\'Android. \nTous les correctifs contenus ont été répliqués à partir de versions plus récentes.</string>
 </resources>

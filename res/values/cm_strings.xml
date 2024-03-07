@@ -206,4 +206,8 @@
     <string name="captive_portal_url_title">Captive Portal Detection Provider</string>
     <string name="captive_portal_url_summary">%s is contacted to probe, whether a captive portal is used</string>
     <string name="captive_portal_toast_success">Captive portal provider has been changed</string>
+
+    <!-- "Custom" Security Patch label -->
+    <string name="custom_patch">Custom build release</string>
+    <string name="custom_patch_info">There are no official security patches for this Android version anymore. \nAll patches contained in this build are backports from newer versions.</string>
 </resources>

@@ -100,4 +100,6 @@
     <string name="advanced_notifications_title">Zaawansowane ustawienia powiadomień</string>
     <string name="peak_refresh_rate_summary_custom">W przypadku niektórych treści automatycznie podwyższa częstotliwość odświeżania z 60 na %1$d Hz. Zwiększa zużycie baterii.</string>
     <string name="storage_warning_internal">Ostrzeżenie: Ta opcja może nie działać poprawnie lub prowadzić do utraty danych i dlatego nie jest zalecana!</string>
+    <string name="custom_patch">Wersja nieoficjalna</string>
+    <string name="custom_patch_info">Nie ma oficjalnych aktualizacji zabezpieczeń dla tej wersji Androida. \nWszystkie zawarte łaty zostały przeniesione z nowszych wersji.</string>
 </resources>

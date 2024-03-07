@@ -104,4 +104,6 @@
     <string name="captive_portal_url_title">Provider für Captive Portal Erkennung</string>
     <string name="captive_portal_url_summary">%s wird kontaktiert, um das Vorhandensein eines \'Captive Portal\' zu prüfen</string>
     <string name="captive_portal_toast_success">Captive Portal Provider wurde geändert</string>
+    <string name="custom_patch">Custom Build Version</string>
+    <string name="custom_patch_info">Für diese Android-Version sind keine offiziellen Sicherheitsupdates mehr erhältlich. \nAlle enthaltenen Patches wurden aus neueren Versionen rückportiert.</string>
 </resources>
