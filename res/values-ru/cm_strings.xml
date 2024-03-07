@@ -117,4 +117,6 @@
     <string name="ambient_display_screen_off_udfps_title" product="device">Длительное нажатие на датчик отпечатка пальца для разблокировки устройства</string>
     <string name="ambient_display_screen_off_udfps_summary">Для пробуждения экрана и разблокировки удерживайте датчик отпечатков пальцев под дисплеем.</string>
     <string name="storage_warning_internal">Предупреждение: эта опция может работать неправильно или привести к потере данных, поэтому не рекомендуется!</string>
+    <string name="custom_patch">Неофициальная версия</string>
+    <string name="custom_patch_info">Официальные исправления безопасности более не выпускаются для данной версии Android. \nВсе исправления, представленные в этой сборке, адаптированы из более новых версий системы.</string>
 </resources>
