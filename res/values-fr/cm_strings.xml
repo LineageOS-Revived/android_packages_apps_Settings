@@ -113,4 +113,6 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
     <string name="backup_transport_title">Sélectionner un fournisseur de sauvegarde</string>
     <string name="fast_charging_title">Charge rapide</string>
     <string name="fast_charging_summary">Désactiver pour réduire la chaleur produite par l\'appareil pendant la charge ou pour prolonger la durée de vie de la batterie</string>
+    <string name="custom_patch">Version individuelle</string>
+    <string name="custom_patch_info">Il n\'y a pas de mises à jour de sécurité officielles disponibles pour cette version d\'Android. \nTous les correctifs contenus ont été répliqués à partir de versions plus récentes.</string>
 </resources>

@@ -114,4 +114,6 @@
     <string name="backup_transport_title">Выберите поставщика резервного копирования</string>
     <string name="fast_charging_title">Быстрая зарядка</string>
     <string name="fast_charging_summary">Отключите, чтобы уменьшить нагрев устройства во время зарядки или продлить срок службы батареи</string>
+    <string name="custom_patch">Неофициальная версия</string>
+    <string name="custom_patch_info">Официальные исправления безопасности более не выпускаются для данной версии Android. \nВсе исправления, представленные в этой сборке, адаптированы из более новых версий системы.</string>
 </resources>

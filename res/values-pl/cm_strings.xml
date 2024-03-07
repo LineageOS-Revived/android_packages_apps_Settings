@@ -114,4 +114,6 @@
     <string name="backup_transport_title">Wybierz dostawcę kopii zapasowej</string>
     <string name="fast_charging_title">Szybkie ładowanie</string>
     <string name="fast_charging_summary">Wyłącz, aby zmniejszyć ciepło wytwarzane przez urządzenie podczas ładowania lub wydłużyć żywotność baterii</string>
+    <string name="custom_patch">Wersja nieoficjalna</string>
+    <string name="custom_patch_info">Nie ma oficjalnych aktualizacji zabezpieczeń dla tej wersji Androida. \nWszystkie zawarte łaty zostały przeniesione z nowszych wersji.</string>
 </resources>

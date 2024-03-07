@@ -112,4 +112,6 @@
     <string name="backup_transport_title">Backup-Anbieter auswählen</string>
     <string name="fast_charging_title">Schnelles Laden</string>
     <string name="fast_charging_summary">Deaktivieren, um die vom Gerät beim Laden erzeugte Wärme zu reduzieren oder die Lebensdauer des Akkus zu verlängern</string>
+    <string name="custom_patch">Custom Build Version</string>
+    <string name="custom_patch_info">Für diese Android-Version sind keine offiziellen Sicherheitsupdates mehr erhältlich. \nAlle enthaltenen Patches wurden aus neueren Versionen rückportiert.</string>
 </resources>
