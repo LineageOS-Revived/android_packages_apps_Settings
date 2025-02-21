@@ -36,7 +36,6 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.VisibleForTesting;
 import androidx.collection.ArraySet;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceClickListener;
