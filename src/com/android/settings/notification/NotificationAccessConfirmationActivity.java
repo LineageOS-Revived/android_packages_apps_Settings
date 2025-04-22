@@ -39,7 +39,6 @@ import android.os.UserHandle;
 import android.service.notification.NotificationListenerService;
 import android.text.TextUtils;
 import android.util.Slog;
-import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.app.AlertActivity;
@@ -138,20 +137,6 @@ public class NotificationAccessConfirmationActivity extends Activity
         // Consistent with the permission dialog
         // Used instead of p.mCancelable as that is only honored for AlertDialog
         getWindow().setCloseOnTouchOutside(false); 
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        getWindow().addFlags(
-                WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
-    }
-
-    @Override
-    public void onPause() {
-        getWindow().clearFlags(
-                WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS);
-        super.onPause();
     }
 
     private void onAllow() {

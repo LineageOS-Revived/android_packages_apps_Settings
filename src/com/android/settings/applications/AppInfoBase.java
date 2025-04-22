@@ -174,22 +174,18 @@ public abstract class AppInfoBase extends SettingsPreferenceFragment
         }
         String callingPackageName = null;
         try {
-            callingPackageName = ActivityManager.getService()
-                .getLaunchedFromPackage(activity.getActivityToken());
+            int callerUid = ActivityManager.getService().getLaunchedFromUid(
+                    activity.getActivityToken());
+            if (ActivityManager.checkUidPermission(Manifest.permission.INTERACT_ACROSS_USERS_FULL,
+                    callerUid) != PackageManager.PERMISSION_GRANTED) {
+                Log.w(TAG, "Uid " + callerUid + " does not have required permission "
+                        + Manifest.permission.INTERACT_ACROSS_USERS_FULL);
+                return false;
+            }
+            return true;
         } catch (Exception e) {
             return false;
         }
-        if (TextUtils.isEmpty(callingPackageName)) {
-            Log.w(TAG, "Not able to get calling package name for permission check");
-            return false;
-        }
-        if (mPm.checkPermission(Manifest.permission.INTERACT_ACROSS_USERS_FULL, callingPackageName)
-                != PackageManager.PERMISSION_GRANTED) {
-            Log.w(TAG, "Package " + callingPackageName + " does not have required permission "
-                    + Manifest.permission.INTERACT_ACROSS_USERS_FULL);
-            return false;
-        }
-        return true;
     }
 
     protected void setIntentAndFinish(boolean appChanged) {

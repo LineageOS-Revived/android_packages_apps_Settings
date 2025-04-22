@@ -149,7 +149,8 @@ public class BiometricFragment extends InstrumentedFragment {
                         BiometricPrompt.KEY_REQUIRE_CONFIRMATION, true))
                 .setDisallowBiometricsIfPolicyExists(mBundle.getBoolean(
                         BiometricPrompt.EXTRA_DISALLOW_BIOMETRICS_IF_POLICY_EXISTS, false))
-                .setReceiveSystemEvents(true);
+                .setReceiveSystemEvents(true)
+                .setClassNameIfItIsConfirmDeviceCredentialActivity();
 
         mBiometricPrompt = builder.build();
         mCancellationSignal = new CancellationSignal();
