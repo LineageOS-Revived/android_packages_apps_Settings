@@ -47,6 +47,7 @@ public class ShadowUtils {
     private static boolean sIsVoiceCapable;
     private static ArraySet<String> sResultLinks = new ArraySet<>();
     private static boolean sIsBatteryPresent;
+    private static boolean sIsProtectedPackage;
 
     @Implementation
     protected static int enforceSameOwner(Context context, int userId) {
@@ -69,6 +70,7 @@ public class ShadowUtils {
         sIsVoiceCapable = false;
         sResultLinks = new ArraySet<>();
         sIsBatteryPresent = true;
+        sIsProtectedPackage = false;
     }
 
     public static void setIsDemoUser(boolean isDemoUser) {
@@ -165,5 +167,13 @@ public class ShadowUtils {
 
     public static void setIsBatteryPresent(boolean isBatteryPresent) {
         sIsBatteryPresent = isBatteryPresent;
+    }
+
+    @Implementation
+    protected static boolean isProtectedPackage(Context context, String packageName) {
+        return sIsProtectedPackage;
+    }
+    public static void setIsProtectedPackage(boolean isProtectedPackage) {
+        sIsProtectedPackage = isProtectedPackage;
     }
 }
