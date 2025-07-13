@@ -39,6 +39,7 @@ public class ShadowUtils {
     private static ComponentName sDeviceOwnerComponentName;
     private static Map<String, String> sAppNameMap;
     private static boolean sIsSystemAlertWindowEnabled;
+    private static boolean sIsProtectedPackage;
 
     @Implementation
     protected static int enforceSameOwner(Context context, int userId) {
@@ -58,6 +59,7 @@ public class ShadowUtils {
         sFingerprintManager = null;
         sIsUserAMonkey = false;
         sIsDemoUser = false;
+        sIsProtectedPackage = false;
     }
 
     public static void setIsDemoUser(boolean isDemoUser) {
@@ -122,5 +124,13 @@ public class ShadowUtils {
 
     public static void setIsSystemAlertWindowEnabled(boolean enabled) {
         sIsSystemAlertWindowEnabled = enabled;
+    }
+
+    @Implementation
+    protected static boolean isProtectedPackage(Context context, String packageName) {
+        return sIsProtectedPackage;
+    }
+    public static void setIsProtectedPackage(boolean isProtectedPackage) {
+        sIsProtectedPackage = isProtectedPackage;
     }
 }
