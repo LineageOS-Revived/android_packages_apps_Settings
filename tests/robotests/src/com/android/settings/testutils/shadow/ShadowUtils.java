@@ -48,6 +48,7 @@ public class ShadowUtils {
     private static ArraySet<String> sResultLinks = new ArraySet<>();
     private static boolean sIsBatteryPresent;
     private static boolean sIsMultipleBiometricsSupported;
+    private static boolean sIsProtectedPackage;
 
     @Implementation
     protected static int enforceSameOwner(Context context, int userId) {
@@ -71,6 +72,7 @@ public class ShadowUtils {
         sResultLinks = new ArraySet<>();
         sIsBatteryPresent = true;
         sIsMultipleBiometricsSupported = false;
+        sIsProtectedPackage = false;
     }
 
     public static void setIsDemoUser(boolean isDemoUser) {
@@ -176,5 +178,14 @@ public class ShadowUtils {
 
     public static void setIsMultipleBiometricsSupported(boolean isMultipleBiometricsSupported) {
         sIsMultipleBiometricsSupported = isMultipleBiometricsSupported;
+    }
+
+    @Implementation
+    protected static boolean isProtectedPackage(Context context, String packageName) {
+        return sIsProtectedPackage;
+    }
+
+    public static void setIsProtectedPackage(boolean isProtectedPackage) {
+        sIsProtectedPackage = isProtectedPackage;
     }
 }
