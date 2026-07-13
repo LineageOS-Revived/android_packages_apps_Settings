@@ -105,4 +105,6 @@
     <string name="backup_transport_setting_label">Alterar provedor de backup</string>
     <string name="backup_transport_title">Selecione o provedor de backup</string>
     <string name="fast_charging_title">Carregamento rápido</string>
+    <string name="custom_patch">Nível de atualização dos backports de segurança</string>
+    <string name="custom_patch_info">Não existem mais atualizações de segurança oficiais para esta versão do Android. \nTodos os patches contidos nesta versão são adaptações de versões mais recentes.</string>
 </resources>
