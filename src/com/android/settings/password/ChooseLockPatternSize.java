@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.preference.Preference;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.utils.SettingsDividerItemDecoration;
 
 import com.google.android.setupdesign.GlifPreferenceLayout;
+import com.google.android.setupdesign.util.ThemeHelper;
 
 import org.lineageos.internal.logging.LineageMetricsLogger;
 
@@ -45,12 +47,6 @@ public class ChooseLockPatternSize extends SettingsActivity {
         Intent modIntent = new Intent(super.getIntent());
         modIntent.putExtra(EXTRA_SHOW_FRAGMENT, ChooseLockPatternSizeFragment.class.getName());
         return modIntent;
-    }
-
-    @Override
-    protected void onApplyThemeResource(Theme theme, int resid, boolean first) {
-        resid = SetupWizardUtils.getTheme(this, getIntent());
-        super.onApplyThemeResource(theme, resid, first);
     }
 
     @Override
@@ -66,6 +62,8 @@ public class ChooseLockPatternSize extends SettingsActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(SetupWizardUtils.getTheme(this, getIntent()));
+        ThemeHelper.trySetDynamicColor(this);
         super.onCreate(savedInstanceState);
         findViewById(R.id.content_parent).setFitsSystemWindows(false);
     }
@@ -120,6 +118,16 @@ public class ChooseLockPatternSize extends SettingsActivity {
             }
 
             layout.setHeaderText(R.string.lock_settings_picker_pattern_size_message);
+
+            // Remove the padding on the start of the header text.
+            if (ThemeHelper.shouldApplyMaterialYouStyle(getContext())) {
+                final LinearLayout headerLayout = layout.findManagedViewById(
+                        com.google.android.setupdesign.R.id.sud_layout_header);
+                if (headerLayout != null) {
+                    headerLayout.setPadding(0, layout.getPaddingTop(), 0,
+                            layout.getPaddingBottom());
+                }
+            }
 
             // Use the dividers in SetupWizardRecyclerLayout. Suppress the dividers in
             // PreferenceFragment.

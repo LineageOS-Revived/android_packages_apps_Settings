@@ -18,7 +18,9 @@ package com.android.settings.applications;
 
 import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.app.settings.SettingsEnums;
@@ -33,18 +35,21 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.usb.IUsbManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.android.settings.SettingsActivity;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.activityembedding.ActivityEmbeddingUtils;
 import com.android.settings.applications.manageapplications.ManageApplications;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
@@ -135,8 +140,13 @@ public abstract class AppInfoBase extends SettingsPreferenceFragment
             }
         }
         if (intent != null && intent.hasExtra(Intent.EXTRA_USER_HANDLE)) {
-            mUserId = ((UserHandle) intent.getParcelableExtra(
-                    Intent.EXTRA_USER_HANDLE)).getIdentifier();
+            mUserId = ((UserHandle) intent.getParcelableExtra(Intent.EXTRA_USER_HANDLE))
+                    .getIdentifier();
+            if (mUserId != UserHandle.myUserId() && !hasInteractAcrossUsersPermission()) {
+                Log.w(TAG, "Intent not valid.");
+                finish();
+                return "";
+            }
         } else {
             mUserId = UserHandle.myUserId();
         }
@@ -161,6 +171,46 @@ public abstract class AppInfoBase extends SettingsPreferenceFragment
         }
 
         return mPackageName;
+    }
+
+    @VisibleForTesting
+    protected boolean hasInteractAcrossUsersPermission() {
+        Activity activity = getActivity();
+        if (!(activity instanceof SettingsActivity)) {
+            return false;
+        }
+        // Check the permission of the calling package if the device supports multi-pane.
+        if (ActivityEmbeddingUtils.isEmbeddingActivityEnabled(activity)) {
+            final String callingPackageName =
+                    ((SettingsActivity) activity).getInitialCallingPackage();
+
+            if (TextUtils.isEmpty(callingPackageName)) {
+                Log.w(TAG, "Not able to get calling package name for permission check");
+                return false;
+            }
+            if (mPm.checkPermission(Manifest.permission.INTERACT_ACROSS_USERS_FULL,
+                    callingPackageName)
+                    != PackageManager.PERMISSION_GRANTED) {
+                Log.w(TAG, "Package " + callingPackageName + " does not have required permission "
+                        + Manifest.permission.INTERACT_ACROSS_USERS_FULL);
+                return false;
+            }
+            return true;
+        }
+
+        try {
+            int callerUid = ActivityManager.getService().getLaunchedFromUid(
+                    activity.getActivityToken());
+            if (ActivityManager.checkUidPermission(Manifest.permission.INTERACT_ACROSS_USERS_FULL,
+                    callerUid) != PackageManager.PERMISSION_GRANTED) {
+                Log.w(TAG, "Uid " + callerUid + " does not have required permission "
+                        + Manifest.permission.INTERACT_ACROSS_USERS_FULL);
+                return false;
+            }
+            return true;
+        } catch (RemoteException e) {
+            return false;
+        }
     }
 
     protected void setIntentAndFinish(boolean appChanged) {

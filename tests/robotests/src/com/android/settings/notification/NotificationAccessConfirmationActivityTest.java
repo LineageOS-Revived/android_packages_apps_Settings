@@ -16,6 +16,8 @@
 
 package com.android.settings.notification;
 
+import static android.view.WindowManager.LayoutParams.SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS;
+
 import static com.android.internal.notification.NotificationAccessConfirmationActivityContract.EXTRA_COMPONENT_NAME;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -31,8 +33,6 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.android.settings.R;
-
 import com.google.common.base.Strings;
 
 import org.junit.Test;
@@ -45,15 +45,27 @@ import org.robolectric.RuntimeEnvironment;
 public class NotificationAccessConfirmationActivityTest {
 
     @Test
-    public void start_showsDialog() {
+    public void onCreate_setsWindowFlags() {
+        ComponentName cn = new ComponentName("com.example", "com.example.SomeService");
+        installPackage(cn.getPackageName(), "Example");
+
+        NotificationAccessConfirmationActivity activity = startActivityWithIntent(cn);
+
+        assertThat(activity.getWindow().getAttributes().privateFlags
+                & SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS).isNotEqualTo(0);
+        assertThat(activity.getWindow().getAttributes().flags
+                & SYSTEM_FLAG_HIDE_NON_SYSTEM_OVERLAY_WINDOWS).isEqualTo(0);
+    }
+
+    @Test
+    public void start_withMissingIntentFilter_finishes() {
         ComponentName cn = new ComponentName("com.example", "com.example.SomeService");
         installPackage(cn.getPackageName(), "X");
 
         NotificationAccessConfirmationActivity activity = startActivityWithIntent(cn);
 
-        assertThat(activity.isFinishing()).isFalse();
-        assertThat(getDialogText(activity)).isEqualTo(
-                activity.getString(R.string.notification_listener_security_warning_summary, "X"));
+        assertThat(getDialogText(activity)).isNull();
+        assertThat(activity.isFinishing()).isTrue();
     }
 
     @Test

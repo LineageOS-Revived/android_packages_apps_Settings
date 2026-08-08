@@ -1793,6 +1793,12 @@
     <!-- Phonebook sharing toggle detailed message in pairing dialogs.  [CHAR LIMIT=NONE] -->
     <string name="bluetooth_pairing_phonebook_toggle_details">Info will be used for call announcements and more</string>
 
+    <!-- Title for the dialog to confirm PIN. [CHAR LIMIT=40] -->
+    <string name="bluetooth_pairing_confirmation_title">Check pairing codes</string>
+
+    <!-- Message for the dialog to confirm PIN. [CHAR LIMIT=NONE] -->
+    <string name="bluetooth_pairing_confirmation_msg">Check if this code matches the one on <xliff:g id="device_name" example="device_name">%1$s</xliff:g>.\n\nFor your security, do not enter this code anywhere.</string>
+
     <!-- Title for BT error dialogs. -->
     <string name="bluetooth_error_title"></string>
 
@@ -11129,9 +11135,9 @@
     <!-- Debugging developer settings: enable angle as system driver? [CHAR LIMIT=50] -->
     <string name="enable_angle_as_system_driver">Experimental: Enable ANGLE</string>
     <!-- Debugging developer settings: enable angle as system driver summary [CHAR LIMIT=NONE] -->
-    <string name="enable_angle_as_system_driver_summary">Warning: Enable ANGLE as default OpenGL ES driver. This feature is in experiment and may not be compatible with some camera and video apps.</string>
+    <string name="enable_angle_as_system_driver_summary">Warning: ANGLE will be set as the default OpenGL ES driver. This feature is experimental and may not be compatible with some camera or video apps. Back up any important data before turning this on.</string>
     <!--Dialog body text used to explain a reboot is required after changing ANGLE as system GLES driver setting-->
-    <string name="reboot_dialog_enable_angle_as_system_driver">A reboot is required to change the system OpenGL ES driver</string>
+    <string name="reboot_dialog_enable_angle_as_system_driver">To change the system OpenGL ES driver, the device will restart. Back up any important data before restarting. If restarting fails, a factory reset will be needed to use the device.</string>
 
     <!-- Title for App Compatibility Changes dashboard where developers can configure per-app overrides for compatibility changes [CHAR LIMIT=50] -->
     <string name="platform_compat_dashboard_title">App Compatibility Changes</string>
