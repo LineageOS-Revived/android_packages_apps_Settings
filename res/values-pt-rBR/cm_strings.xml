@@ -115,4 +115,6 @@
     <string name="ambient_display_screen_off_udfps_title" product="device">Pressione e segure o sensor de impressão digital para desbloquear o dispositivo</string>
     <string name="ambient_display_screen_off_udfps_summary">Para ligar sua tela e desbloquear, pressione e segure o sensor de impressão digital sob a tela.</string>
     <string name="storage_warning_internal">Aviso: Esta opção pode não funcionar corretamente ou levar à perda de dados, portanto, não é recomendada!</string>
+    <string name="custom_patch">Nível de atualização dos backports de segurança</string>
+    <string name="custom_patch_info">Não existem mais atualizações de segurança oficiais para esta versão do Android. \nTodos os patches contidos nesta versão são adaptações de versões mais recentes.</string>
 </resources>
